@@ -15,10 +15,11 @@ class DeckCard extends Component {
   handleDeckPress = () => {
     const { deck } = this.props;
     const { scaleValue } = this.state;
+  
 
     Animated.sequence([
-      Animated.timing(scaleValue, { duration: 125, toValue: 0.96}),
-      Animated.timing(scaleValue, { duration: 125 , toValue: 1})
+      Animated.timing(scaleValue, { duration: 125, toValue: 0.96, useNativeDriver: true}),
+      Animated.timing(scaleValue, { duration: 125 , toValue: 1, useNativeDriver: true})
 
     ]).start(() => {
         navigationService.navigate('Deck', {
@@ -37,7 +38,7 @@ class DeckCard extends Component {
 
       <Animated.View style={{ transform: [{ scale: scaleValue }] }}>
 
-        <TouchableOpacity
+        <TouchableOpacity 
           disabled={!allowNavigation}
           onPress={this.handleDeckPress}
           style={styles.container}>
