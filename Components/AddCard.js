@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-nativ
 import {connect} from 'react-redux'
 import {AddCard} from '../Actions/index'
 import commonStyles from '../Utils/CommonStyles'
-import {textColor} from '../Utils/colors'
+import {textColor, white} from '../Utils/colors'
 import {robotoMedium} from '../Utils/fonts'
 
 class Addcard extends React.Component{
@@ -65,7 +65,7 @@ class Addcard extends React.Component{
     }
     render(){
         return(
-            <View style={{flex: 1}}>
+            <View style={{flex: 1,  backgroundColor:'#2B2B2B'}}>
               <View style={commonStyles.viewContainer}>
                   <Text style={commonStyles.title}>Add Card</Text>
                   <Text style={styles.tagline}>Add a new Card to deck</Text>
@@ -108,14 +108,15 @@ function mapDispatchToProps(dispatch, { navigation }){
 
 const styles = StyleSheet.create({
     tagline: {
-      color: textColor,
+      color: white,
       fontSize: 16
     },
     label:{
       marginTop: 32,
       marginBottom: 4,
       fontSize: 16,
-      fontFamily: robotoMedium
+      fontFamily: robotoMedium,
+      color: white
     }
   });
 

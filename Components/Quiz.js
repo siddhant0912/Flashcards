@@ -43,7 +43,7 @@ class Quiz extends React.Component{
         const {currentQuestion, answeredCorrectly, quizComplete} =this.state
         const currQues = questions[currentQuestion]
         return(
-            <View style={{flex:1}}>
+            <View style={{flex:1, backgroundColor: '#2B2B2B'}}>
                 <CustomStatusBar/>
                 <View style={commonStyles.viewContainer}> 
 

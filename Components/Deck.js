@@ -4,6 +4,7 @@ import { View, Text, TouchableOpacity } from 'react-native'
 import commonStyles from '../Utils/CommonStyles'
 import navigationService from '../Navigation/navigationService'
 import DeckCard from './DeckCard'
+import CustomStatusBar from './CustomStatusBar'
 
 class Deck extends React.Component{
     state= {
@@ -36,6 +37,8 @@ class Deck extends React.Component{
         const {deck} = this.props
         const {NoQueErr} = this.state
         return(
+            <View style={{flex:1, backgroundColor:'#2B2B2B'}}>
+            <CustomStatusBar/>
             <View style={[commonStyles.viewContainer, {marginTop:8}]}>
                 <DeckCard deck={deck} allowNavigation= {false}/>
                 <Text style={commonStyles.title}>Deck</Text>
@@ -50,6 +53,7 @@ class Deck extends React.Component{
                 {NoQueErr &&(
                     <Text style={commonStyles.inputErrorText}>Not Enough Cards!! Add more cards</Text>
                 )}
+            </View>
             </View>
         )
     }

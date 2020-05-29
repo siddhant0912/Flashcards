@@ -12,22 +12,43 @@ const StackNavigator = createStackNavigator({
         screen: TabNavigation,
         navigationOptions: {
             header: null
+
         }
     },
     Decks: {
-        screen: Decks
+        screen: Decks,
+
     },
     Deck: {
-        screen: Deck
+        screen: Deck,
+        navigationOptions: {
+            title: 'Deck',
+            headerTintColor: 'white',
+            headerStyle: { backgroundColor: '#2B2B2B' }
+
+        }
     },
     AddDeck: {
-        screen: Adddeck
+        screen: Adddeck,
+
     },
     AddCard: {
-        screen: Addcard
+        screen: Addcard,
+        navigationOptions: {
+            title: 'Add Card',
+            headerTintColor: 'white',
+            headerStyle: { backgroundColor: '#2B2B2B' }
+
+        }
     },
     Quiz: {
-        screen: Quiz
+        screen: Quiz,
+        navigationOptions: {
+            title: 'Quiz',
+            headerTintColor: 'white',
+            headerStyle: { backgroundColor: '#2B2B2B' }
+
+        }
     }
 });
 

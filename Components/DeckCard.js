@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, Text, StyleSheet, TouchableOpacity, Animated } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import { bgGreen, white } from '../Utils/colors';
+import { bgGreen, white, orange } from '../Utils/colors';
 import { robotoMedium, robotoRegular } from '../Utils/fonts';
 import navigationService from '../Navigation/navigationService';
 
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     padding: 16,
     borderRadius: 10,
-    backgroundColor: bgGreen
+    backgroundColor: orange
   },
   contentContainer: {
     flex: 1

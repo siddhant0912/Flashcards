@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { bgBlue, textColor, textRed, white } from './colors';
+import { bgBlue, textColor, textRed, white, orange, black } from './colors';
 import { robotoMedium, robotoRegular } from './fonts';
 
 const commonStyles = StyleSheet.create({
@@ -11,7 +11,7 @@ const commonStyles = StyleSheet.create({
         marginTop: 16,
         fontSize: 40,
         fontFamily: robotoMedium,
-        color: textColor
+        color: white
     },
     btnPrimary: {
         justifyContent: 'center',
@@ -19,14 +19,14 @@ const commonStyles = StyleSheet.create({
         marginTop: 32,
         height: 50,
         borderRadius: 10,
-        backgroundColor: bgBlue
+        backgroundColor: orange
     },
     btnSecondary: {
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 32,
         height: 50,
-        borderColor: bgBlue,
+        borderColor: orange,
         borderWidth: 1,
         borderRadius: 10
     },
@@ -37,20 +37,21 @@ const commonStyles = StyleSheet.create({
         textTransform: 'uppercase'
     },
     btnSecondaryText: {
-        color: bgBlue,
+        color: white,
         fontSize: 14,
         fontFamily: robotoMedium,
         textTransform: 'uppercase'
     },
     textInput: {
         height: 50,
-        borderColor: '#dedede',
+        borderColor: orange,
         borderWidth: 1,
         borderRadius: 5,
         paddingLeft: 12,
         paddingRight: 12,
         fontSize: 16,
-        fontFamily: robotoRegular
+        fontFamily: robotoRegular,
+        color: white
     },
     inputErrorText: {
         marginTop: 4,

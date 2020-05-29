@@ -1,6 +1,6 @@
 import React from 'react'
 import {StyleSheet, Text, View , Image} from 'react-native'
-import {white,  bgBlueLight} from '../Utils/colors'
+import {white,  bgBlueLight, orange2} from '../Utils/colors'
 import {robotoMedium} from '../Utils/fonts'
 
 export default function QuizHeader(props){
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
       paddingRight: 16,
       height: 130,
       borderRadius: 10,
-      backgroundColor: bgBlueLight
+      backgroundColor: orange2
     },
     headerTextContainer: {
       flex: 1,

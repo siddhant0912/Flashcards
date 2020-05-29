@@ -2,7 +2,7 @@ import React from 'react'
 import {StyleSheet, TouchableOpacity, View, Text} from 'react-native'
 import commonStyles from '../Utils/CommonStyles'
 import {robotoMedium} from '../Utils/fonts'
-import {textColor} from '../Utils/colors'
+import { white} from '../Utils/colors'
 import navigationService from '../Navigation/navigationService'
 
 function QuizResults(props){
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
       marginBottom: 20,
       fontSize: 20,
       fontFamily: robotoMedium,
-      color: textColor
+      color: white
     }
   });
 

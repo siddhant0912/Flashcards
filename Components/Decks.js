@@ -10,14 +10,14 @@ class Decks extends React.Component{
     render(){
         const { decksArray } = this.props;
         return(
-            <View style={{flex: 1}}>
+            <View style={{flex: 1, backgroundColor:'#2B2B2B'}}>
                <CustomStatusBar/>
                <ScrollView style={commonStyles.viewContainer}> 
                <HomeHeader/>
 
                {decksArray.length === 1 
                ? <Text style={commonStyles.title}> Deck</Text>
-               : <Text style={commonStyles.title}>{decksArray.length} Decks</Text>
+               : <Text style={[commonStyles.title ]}>{decksArray.length} Decks</Text>
             }
                 {decksArray.map(deck => (
               <DeckCard deck={deck} allowNavigation={true} key={deck.id} />

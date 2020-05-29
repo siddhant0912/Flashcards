@@ -80,20 +80,20 @@ const styles = StyleSheet.create({
       marginBottom: 20,
       fontSize: 20,
       fontFamily: robotoMedium,
-      color: textColor
+      color: white
     },
     smallText: {
       marginTop: 8,
       marginBottom: 20,
       fontSize: 16,
       fontFamily: robotoRegular,
-      color: textColor
+      color: white
     },
     heading: {
       marginTop: 8,
       fontSize: 32,
       fontFamily: robotoMedium,
-      color: textColor
+      color: white
     },
     btnSuccess: {
       justifyContent: 'center',

@@ -2,7 +2,7 @@ import React from 'react';
 import { Platform } from 'react-native';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
-import { bgBlue, white } from '../Utils/colors';
+import { bgBlue, white, black, orange } from '../Utils/colors';
 import { robotoRegular } from '../Utils/fonts';
 
 import Decks from '../Components/Decks';
@@ -13,9 +13,9 @@ const TabNavigator = createBottomTabNavigator({
         screen: Decks,
         navigationOptions: {
             tabBarLabel: 'Decks',
-            tabBarIcon: ({ tintColor }) => < MaterialCommunityIcons name = "cards-outline"
+            tabBarIcon: () => < MaterialCommunityIcons name = "cards-outline"
             size = { 30 }
-            color = { tintColor }
+            color = { orange }
             />
         }
     },
@@ -23,9 +23,9 @@ const TabNavigator = createBottomTabNavigator({
         screen: AddDeck,
         navigationOptions: {
             tabBarLabel: 'Add Deck',
-            tabBarIcon: ({ tintColor }) => < MaterialIcons name = "add"
+            tabBarIcon: () => < MaterialIcons name = "add"
             size = { 30 }
-            color = { tintColor }
+            color = { orange }
             />
         }
     }
@@ -34,10 +34,10 @@ const TabNavigator = createBottomTabNavigator({
         header: null
     },
     tabBarOptions: {
-        activeTintColor: Platform.OS === 'ios' ? bgBlue : white,
+        activeTintColor: Platform.OS === 'ios' ? bgBlue : orange,
         style: {
             height: 56,
-            backgroundColor: Platform.OS === 'ios' ? '#FAFAFA' : bgBlue,
+            backgroundColor: Platform.OS === 'ios' ? '#FAFAFA' : black,
             fontFamily: robotoRegular,
             shadowColor: 'rgba(0,0,0,0.24)',
             shadowOffset: {
