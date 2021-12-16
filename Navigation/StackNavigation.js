@@ -21,12 +21,6 @@ const StackNavigator = createStackNavigator({
     },
     Deck: {
         screen: Deck,
-        navigationOptions: {
-            title: 'Deck',
-            headerTintColor: 'white',
-            headerStyle: { backgroundColor: '#2B2B2B' }
-
-        }
     },
     AddDeck: {
         screen: Adddeck,

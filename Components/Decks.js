@@ -12,7 +12,7 @@ class Decks extends React.Component{
         return(
             <View style={{flex: 1, backgroundColor:'#2B2B2B'}}>
                <CustomStatusBar/>
-               <ScrollView style={commonStyles.viewContainer}> 
+               <ScrollView style={commonStyles.viewContainer} scrollEnabled={true} showsVerticalScrollIndicator={false}> 
                <HomeHeader/>
 
                {decksArray.length === 1 
@@ -31,15 +31,11 @@ class Decks extends React.Component{
     }
 }
 
-function mapStateToProps(decks) {
-
-    const decksArray = Object.keys(decks)
-      .map(key => decks[key])
-      .sort((a, b) => b.timestamp - a.timestamp);
+function mapStateToProps({decks}) {
+  return {
+      decksArray: decks
+  }
   
-    return {
-      decksArray
-    };
   }
   
 export default connect(mapStateToProps)(Decks)

@@ -76,22 +76,22 @@ class Question extends React.Component{
 
 const styles = StyleSheet.create({
     largeText: {
-      marginTop: 8,
+      marginTop: 5,
       marginBottom: 20,
-      fontSize: 20,
+      fontSize: 16,
       fontFamily: robotoMedium,
       color: white
     },
     smallText: {
-      marginTop: 8,
+      marginTop: 5,
       marginBottom: 20,
-      fontSize: 16,
+      fontSize: 12,
       fontFamily: robotoRegular,
       color: white
     },
     heading: {
-      marginTop: 8,
-      fontSize: 32,
+      marginTop: 5,
+      fontSize: 22,
       fontFamily: robotoMedium,
       color: white
     },

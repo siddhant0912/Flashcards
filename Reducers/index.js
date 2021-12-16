@@ -1,4 +1,4 @@
-import { ADD_CARD, ADD_DECK, RECEIVE_DECKS } from '../Actions/index'
+import { ADD_CARD, ADD_DECK, RECEIVE_DECKS, REMOVE_DECK } from '../Actions/index'
 
 
 function decks(state = {}, action) {
@@ -11,20 +11,25 @@ function decks(state = {}, action) {
         case ADD_DECK:
             return {
                 ...state,
-                [action.deck.id]: action.deck
+                decks : state.decks.concat(action.deck)
             }
-
-        case ADD_CARD:
+        case REMOVE_DECK:
             return {
                 ...state,
-                [action.quescard.deckId]: {
-                    ...state[action.quescard.deckId],
-                    questions: state[action.quescard.deckId].questions.concat({
-                        question: action.quescard.question,
-                        answer: action.quescard.answer
-                    })
-                }
+                decks : state.decks.filter(deck => deck.id !== action.deckId)
+            }  
+        case ADD_CARD:
+            return {
+                ...state, 
+                decks :state.decks.map(deck => deck.id === action.quescard.deckId ?  {
+                        ...deck,
+                        questions: deck.questions.concat({
+                            question: action.quescard.question,
+                            answer: action.quescard.answer
+                        })
+                } : deck)
             }
+            
         default:
             return {
                 ...state

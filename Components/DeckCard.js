@@ -50,7 +50,7 @@ class DeckCard extends Component {
             <View style={styles.countContainer}>
               <Text style={styles.countText}>{cardCount}</Text>
 
-              {cardCount === 1
+              {cardCount <= 1
                 ? <Text style={styles.countLabel}>flashcard</Text>
                 : <Text style={styles.countLabel}>flashcards</Text>
               }

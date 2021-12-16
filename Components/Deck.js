@@ -5,11 +5,39 @@ import commonStyles from '../Utils/CommonStyles'
 import navigationService from '../Navigation/navigationService'
 import DeckCard from './DeckCard'
 import CustomStatusBar from './CustomStatusBar'
-
+import { MaterialIcons } from '@expo/vector-icons';
+import { RemoveDeck } from '../Actions'
 class Deck extends React.Component{
+    constructor(props){
+        super(props)
+    }
     state= {
         NoQueErr : false
     }
+    componentDidMount(){
+        this.props.navigation.setParams({
+            onDeletePress: () =>this.deleteDeck()
+        })
+    }
+    static navigationOptions = ({ navigation }) => {
+		return{
+            title: 'Deck',
+            headerTintColor: 'white',
+            headerStyle: { backgroundColor: '#2B2B2B' },
+            headerRight : <TouchableOpacity onPress={navigation.getParam('onDeletePress')} style={{paddingRight:15}}>
+                    <MaterialIcons name = "delete"
+                        size = { 30 }
+                        color = 'red'
+                />
+            </TouchableOpacity> 
+
+        }
+	}
+    deleteDeck =() =>{
+        console.log('delete Deck here',this.props)
+        this.props.deleteDeck()
+        //this.props.goToDecks()
+    } 
     handleStartQuiz = () =>{
         const {deck ,quesCnt} = this.props
         if(quesCnt ===0 ){
@@ -36,6 +64,14 @@ class Deck extends React.Component{
     render(){
         const {deck} = this.props
         const {NoQueErr} = this.state
+        if(deck == undefined || deck == null){
+            this.props.navigation.navigate('Decks')
+            return <View style={{flex:1, backgroundColor:'#2B2B2B'}}>
+                    <CustomStatusBar/>
+                        <Text style={commonStyles.title}>Card Does not exist</Text>
+                    </View>
+        }
+        console.log('Decl',deck)
         return(
             <View style={{flex:1, backgroundColor:'#2B2B2B'}}>
             <CustomStatusBar/>
@@ -59,12 +95,24 @@ class Deck extends React.Component{
     }
 }
 
-function mapStateToProps(decks, { navigation }){
+function mapStateToProps({decks}, { navigation }){
+    console.log(decks)
     const {deckId} = navigation.state.params
+    const currentDeck = decks.filter(deck => deck.id == deckId)
     return{
         deckId,
-        deck: decks[deckId],
-        quesCnt : decks[deckId].questions.length
+        deck: currentDeck[0],
+        quesCnt : currentDeck.length > 0  ? currentDeck[0].questions.length : []
     }
 }
-export default connect(mapStateToProps)(Deck)
+function mapDispatchToProps(dispatch, { navigation }) {
+  
+    return {
+      deleteDeck: () => {
+        const deckId = navigation.state.params.deckId
+        dispatch(RemoveDeck(deckId));
+      }
+    };
+  
+  }
+export default connect(mapStateToProps,mapDispatchToProps)(Deck)

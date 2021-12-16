@@ -3,7 +3,8 @@ export const DECKS_STORAGE_KEY = 'MobileFlashcards:Decks';
 //import * as fs from 'fs'
 
 const dummyData = {
-    JavaScript: {
+    decks : [
+        {
         id: 'JavaScript',
         title: 'Javascript',
         timestamp: new Date().getTime(),
@@ -26,7 +27,7 @@ const dummyData = {
             }
         ]
     },
-    React: {
+    {
         id: 'React',
         title: 'React',
         timestamp: new Date().getTime(),
@@ -45,6 +46,7 @@ const dummyData = {
             }
         ]
     }
+    ]
 }
 
 export async function fetchIntialData() {

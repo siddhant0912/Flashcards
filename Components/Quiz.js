@@ -58,12 +58,12 @@ class Quiz extends React.Component{
     }
 }
 
-function mapStateToProps(decks, { navigation }){
+function mapStateToProps({decks}, { navigation }){
     const {deckId} = navigation.state.params
 
     return{
         deckId,
-        questions :decks[deckId].questions
+        questions :decks.filter(deck => deck.id ==deckId)[0].questions
     }
 }
 export default connect(mapStateToProps)(Quiz)
